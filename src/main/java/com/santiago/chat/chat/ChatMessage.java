@@ -1,7 +1,5 @@
 package com.santiago.chat.chat;
 
-import java.awt.*;
-
 public class ChatMessage {
     private String content;
     private String sender;
@@ -14,6 +12,12 @@ public class ChatMessage {
         this.content = content;
         this.sender = sender;
         this.type = type;
+    }
+
+    public ChatMessage(Builder builder) {
+        this.content = builder.content;
+        this.sender = builder.sender;
+        this.type = builder.type;
     }
 
     public String getContent() {
@@ -39,6 +43,7 @@ public class ChatMessage {
     public void setType(MessageType type) {
         this.type = type;
     }
+
     public static class Builder {
         private MessageType type;
         private String sender;
